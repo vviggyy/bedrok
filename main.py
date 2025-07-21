@@ -74,6 +74,12 @@ def reply_to_recent_mentions():
 
         for mention in mentions.data:
             print(f"Checking mention: {mention.id}")
+
+            # 🧯 Prevent replying to itself
+            if str(mention.author_id) == os.getenv("BOT_USER_ID"):
+                print(f"Skipping self-mention: {mention.id}")
+                continue
+
             parent_text = get_parent_tweet_text(mention.id)
             if parent_text:
                 critique = critique_tweet(parent_text)
