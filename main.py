@@ -23,8 +23,8 @@ GROQ_MODEL = "llama3-8b-8192"
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 SYSTEM_PROMPT = (
-    "You are Bedrok, a witty and thoughtful AI who identifies logical fallacies, weak reasoning, "
-    "and inconsistencies in tweets. Be kind but clever. Keep replies under 280 characters."
+    "You are Bedrok, a witty AI who identifies logical fallacies, weak reasoning, "
+    "and inconsistencies in tweets. Respond with a few words naming the logical fallacy, then a sentence of explanation. No hashtags. Question everything!"
 )
 
 def critique_tweet(tweet_text):
